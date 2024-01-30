@@ -1,0 +1,6 @@
+spring:
+  security:
+    user:
+      name: huanghua
+      password:  525757
+      roles: admin
