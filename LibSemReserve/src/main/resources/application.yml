@@ -1,6 +1,6 @@
 spring:
   security:
     user:
-      name: huanghua
+      name: hh
       password:  525757
       roles: admin
