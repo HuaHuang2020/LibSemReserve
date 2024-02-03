@@ -4,3 +4,6 @@ spring:
       name: hh
       password:  525757
       roles: admin
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
