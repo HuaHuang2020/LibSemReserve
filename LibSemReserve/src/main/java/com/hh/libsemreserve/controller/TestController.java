@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import static com.hh.libsemreserve.constant.cons.Url;
+
 /**
  * @Author HH
  * @Date 2024/1/30 16:48
@@ -13,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Api(tags = "测试接口")
 @RequestMapping("/test")
-@CrossOrigin(origins = "http://localhost:8081/",allowCredentials = "true")
+@CrossOrigin(origins = Url ,allowCredentials = "true")
 public class TestController {
     @GetMapping("")
     public String testwork(){

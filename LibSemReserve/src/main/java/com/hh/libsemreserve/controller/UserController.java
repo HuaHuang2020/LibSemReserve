@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.hh.libsemreserve.constant.cons.Url;
+
 /**
  * <p>
  *  前端控制器
@@ -21,7 +23,7 @@ import java.util.Map;
 @Slf4j
 @RestController
 @RequestMapping("/user/")
-@CrossOrigin(origins = "http://localhost:8081/",allowCredentials = "true")
+@CrossOrigin(origins =  Url ,allowCredentials = "true")
 public class UserController {
 
     @Autowired

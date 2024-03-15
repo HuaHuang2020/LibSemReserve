@@ -40,9 +40,14 @@ public class User implements Serializable {
     @TableField("phone")
     private String phone;
 
-    @ApiModelProperty("工号或学号")
+    @ApiModelProperty("学号")
     @TableField("num")
     private String num;
+
+    @ApiModelProperty("学院")
+    @TableField("department")
+    private String department;
+
 
 
     public User(String name, String pwd) {

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import static com.hh.libsemreserve.constant.cons.Url;
+
 /**
  * <p>
  *  前端控制器
@@ -19,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/room")
-@CrossOrigin(origins = "http://localhost:8081/",allowCredentials = "true")
+@CrossOrigin(origins = Url ,allowCredentials = "true")
 public class RoomController {
     @Autowired
     private RoomService roomService;

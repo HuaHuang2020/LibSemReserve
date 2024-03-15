@@ -1,8 +1,13 @@
 package com.hh.libsemreserve.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.hh.libsemreserve.entity.Roomtype;
+import com.hh.libsemreserve.service.RoomtypeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+import static com.hh.libsemreserve.constant.cons.Url;
 
 /**
  * <p>
@@ -14,7 +19,30 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/roomtype")
-@CrossOrigin(origins = "http://localhost:8081/",allowCredentials = "true")
+@CrossOrigin( origins = Url , allowCredentials = "true")
 public class RoomtypeController {
+
+    @Autowired
+    private  RoomtypeService roomtypeService;
+
+    @PostMapping ("/addType")
+    public int addType(@RequestBody Roomtype roomType){
+        return roomtypeService.addType(roomType.getName(), roomType.getCapacity(), roomType.getReserveDetails());
+    }
+//    public int addType(String name , String capacity , String reserveDetails){
+//        return roomtypeService.addType(name, capacity, reserveDetails);
+//    }
+
+    @DeleteMapping("/removeType")
+    public int removeType(int id){
+        roomtypeService.removeById(id);
+        return 1;
+    }
+
+    @GetMapping("/getAllTypes")
+    public List<Roomtype> selectAllTypes(){
+        return roomtypeService.list();
+        //不知道能不能行
+    }
 
 }
