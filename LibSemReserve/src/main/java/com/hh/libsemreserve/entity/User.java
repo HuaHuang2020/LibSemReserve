@@ -45,4 +45,8 @@ public class User implements Serializable {
     private String num;
 
 
+    public User(String name, String pwd) {
+        this.setName(name);
+        this.setPassword(pwd);
+    }
 }

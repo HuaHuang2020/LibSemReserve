@@ -12,5 +12,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2024-02-06 12:00:00
  */
 public interface RoomService extends IService<Room> {
+    int insertRoom(Room room);
 
+    int updateRoom(Room room);
+
+    int deleteRoom(Room room);
 }

@@ -4,6 +4,7 @@ import com.hh.libsemreserve.entity.Room;
 import com.hh.libsemreserve.mapper.RoomMapper;
 import com.hh.libsemreserve.service.RoomService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,5 +17,19 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class RoomServiceImpl extends ServiceImpl<RoomMapper, Room> implements RoomService {
+    @Autowired
+    private RoomMapper roomMapper;
 
+    public int insertRoom(Room room){
+        return roomMapper.insert(room);
+    }
+
+    public int updateRoom(Room room){
+        roomMapper.deleteById(room);
+        return roomMapper.insert(room);
+    }
+
+    public int deleteRoom(Room room){
+        return roomMapper.deleteById(room);
+    }
 }
