@@ -16,5 +16,7 @@ public interface RoomService extends IService<Room> {
 
     int updateRoom(Room room);
 
-    int deleteRoom(Room room);
+    int deleteRoom(int room);
+
+    Room selectById(int id);
 }

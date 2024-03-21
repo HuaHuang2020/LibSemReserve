@@ -29,7 +29,12 @@ public class RoomServiceImpl extends ServiceImpl<RoomMapper, Room> implements Ro
         return roomMapper.insert(room);
     }
 
-    public int deleteRoom(Room room){
-        return roomMapper.deleteById(room);
+    public int deleteRoom(int id){
+        return roomMapper.deleteById( roomMapper.selectById(id) );
+    }
+
+    @Override
+    public Room selectById(int id) {
+        return roomMapper.selectById(id);
     }
 }

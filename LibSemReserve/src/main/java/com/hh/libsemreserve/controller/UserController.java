@@ -112,6 +112,12 @@ public class UserController {
         return userService.getUserById(id);
     }
 
+    @PostMapping("/updateUser")
+    public int updateUser(@RequestBody User user){
+        log.warn(String.valueOf(user));
+        return userService.updateUser(user);
+    }
+
 
 
 

@@ -43,5 +43,8 @@ public class Room implements Serializable {
     @TableField("state")
     private String state;
 
+    @TableField("details")
+    private String details;
+
 
 }

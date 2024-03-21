@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface AdminService extends IService<Admin> {
 
+    int getIdByNumAndPassword(String name, String password);
 }

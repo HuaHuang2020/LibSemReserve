@@ -21,4 +21,6 @@ public interface UserService extends IService<User> {
      String getNumById(int id);
 
      User getUserById(int id);
+
+     int updateUser(User user);
 }

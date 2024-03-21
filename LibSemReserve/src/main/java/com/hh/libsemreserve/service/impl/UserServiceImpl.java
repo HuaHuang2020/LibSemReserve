@@ -48,6 +48,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         return userMapper.selectOne(new QueryWrapper<User>().eq("id",id));
     }
 
+    @Override
+    public int updateUser(User user) {
+        return userMapper.update(user, new QueryWrapper<User>().eq("num",user.getNum()));
+    }
+
 
 //    @Override
 //    public int insertUser(User user) {
